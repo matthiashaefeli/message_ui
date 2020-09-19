@@ -37,9 +37,6 @@ class MessageList extends Component {
         <section>
           {messages.map(message => (
             <Message key={message.id} message={message} />
-            // <article key={message.id}>
-            //   <p>{message.message}</p>
-            // </article>
           ))}
         </section>
       )
