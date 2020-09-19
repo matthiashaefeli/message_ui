@@ -1,48 +1,28 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import Detail from '../Detail/Detail';
 
 class Message extends Component {
   state = {
-    error: null,
-    isLoaded: false,
-    messages: []
+    showDetails: false
   }
 
-  componentDidMount() {
-    axios.get("https://mat-texting-service.herokuapp.com/message").then(
-      result => {
-        this.setState({
-          isLoaded: true,
-          messages: result.data
-        });
-      },
-      error => {
-        this.setState({
-          isLoaded: true,
-          error
-        })
-      }
-    );
+  handleDetails = () => {
+    this.setState({
+      showDetails: !this.state.showDetails
+    })
   }
 
   render() {
-    const { error, isLoaded, messages } = this.state;
-    if (error) {
-      return <div>Error: {error.message}</div>
-    } else if (!isLoaded) {
-      return <div>Is Loading.....</div>
-    } else {
-      return (
-        <section>
-          {messages.map(message => (
-            <article key={message.id}>
-              <p>{message.message}</p>
-            </article>
-          ))}
-        </section>
-      )
-    }
+    const { message } = this.props.message
+
+    return (
+      <article className='message'>
+        <p>Message: {message}</p>
+        <p>Details <span onClick={this.handleDetails}><i className="fas fa-caret-square-down"></i></span></p>
+        {this.state.showDetails && <Detail message={this.props.message} />}
+      </article>
+    )
   }
 }
 
-export default Message;
+export default Message
