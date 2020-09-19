@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Detail from '../Detail/Detail';
+import './message.scss'
 
 class Message extends Component {
   state = {
@@ -18,7 +19,12 @@ class Message extends Component {
     return (
       <article className='message'>
         <p>Message: {message}</p>
-        <p>Details <span onClick={this.handleDetails}><i className="fas fa-caret-square-down"></i></span></p>
+        <p>
+          Details
+          <span onClick={this.handleDetails} className='square-button'>
+            <i className="fas fa-caret-square-down"></i>
+          </span>
+        </p>
         {this.state.showDetails && <Detail message={this.props.message} />}
       </article>
     )
