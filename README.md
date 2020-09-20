@@ -1,8 +1,23 @@
-# UI for message API
+# UI for message API https://mat-texting-service.herokuapp.com
 
-Displays all sent messages.
+User Interface to display all messages, filter by to_number
 
-Filter by to_number.
+User Interface to display all Providers.
+
+Update Provider by load or status
+
+# Deploy project to Netifly
+
+- Login to Netifly https://www.netlify.com/
+- New site from Git
+- Continuous Deployment => GitHub
+- Select repo
+- Deploy site
+
+To change the name
+- Site Settings
+- Change site name
+
 
 ## Available Scripts
 
