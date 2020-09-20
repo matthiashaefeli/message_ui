@@ -2,8 +2,21 @@
 
 .provider {
   padding: 0.5rem 0 0 0.5rem;
-  
+
   h2 {
     color: $mainGreen;
   }
+}
+
+.providerEdit:hover {
+    cursor: pointer;
+    color: $mainGreen;
+}
+
+.inputField {
+  width: 60px;
+}
+
+.updateFields {
+  margin: 10px;
 }
