@@ -6,17 +6,15 @@ User Interface to display all Providers.
 
 Update Provider by load or status
 
-# Deploy project to Netifly
+# Deploy project to Versel
 
-- Login to Netifly https://www.netlify.com/
-- New site from Git
-- Continuous Deployment => GitHub
-- Select repo
-- Deploy site
-
-To change the name
-- Site Settings
-- Change site name
+- Login to Versel
+- Import Project
+- Import Git Repository
+- Enter Url of the Git Repo https://github.com/matthiashaefeli/message_ui
+- Continue
+- Change project name if necessary
+- Deploy
 
 
 ## Available Scripts
