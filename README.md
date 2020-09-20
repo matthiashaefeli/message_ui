@@ -1,7 +1,8 @@
 # UI for message API
 
 Displays all sent messages.
-Filter by to_number
+
+Filter by to_number.
 
 ## Available Scripts
 
