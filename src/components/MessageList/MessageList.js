@@ -36,6 +36,7 @@ class MessageList extends Component {
 
   render() {
     const { error, isLoaded, messages } = this.state;
+
     if (error) {
       return <div>Error: {error.message}</div>
     } else if (!isLoaded) {
@@ -51,7 +52,7 @@ class MessageList extends Component {
             className='searchInput'
           />
           {messages
-            .filter(message => message.to_number.includes(this.state.numberSearch))
+            .filter(message => message.to_number.slice(0, this.state.numberSearch.length) === this.state.numberSearch)
             .map(message => (
               <Message key={message.id} message={message} />
             ))}
