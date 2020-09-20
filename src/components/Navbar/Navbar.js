@@ -12,7 +12,7 @@ export default function Navbar() {
           </a>
         </li>
         <li>
-          <a href='/' className='nav-link'>
+          <a href='/provider' className='nav-link'>
             providers
           </a>
         </li>
