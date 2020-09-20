@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import './messageList.scss'
 import Message from '../Message/Message';
 
 class MessageList extends Component {
   state = {
     error: null,
     isLoaded: false,
-    messages: []
+    messages: [],
+    numberSearch: ''
   }
 
   componentDidMount() {
@@ -26,6 +28,12 @@ class MessageList extends Component {
     );
   }
 
+  handleOnChange(e) {
+    this.setState({
+      numberSearch: e.target.value
+    })
+  }
+
   render() {
     const { error, isLoaded, messages } = this.state;
     if (error) {
@@ -35,9 +43,18 @@ class MessageList extends Component {
     } else {
       return (
         <section>
-          {messages.map(message => (
-            <Message key={message.id} message={message} />
-          ))}
+          <input
+            type='text'
+            placeholder='Search By Number'
+            onChange={this.handleOnChange.bind(this)}
+            value={this.state.numberSearch}
+            className='searchInput'
+          />
+          {messages
+            .filter(message => message.to_number.includes(this.state.numberSearch))
+            .map(message => (
+              <Message key={message.id} message={message} />
+            ))}
         </section>
       )
     }
