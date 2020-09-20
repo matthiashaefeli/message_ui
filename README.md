@@ -1,4 +1,4 @@
-# UI for message API https://mat-texting-service.herokuapp.com
+# UI for message API mat-texting-service.herokuapp.com
 
 User Interface to display all messages, filter by to_number
 
